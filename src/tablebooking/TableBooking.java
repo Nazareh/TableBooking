@@ -10,19 +10,31 @@ import java.time.LocalTime;
 public class TableBooking {
 
     public static void main(String[] args) {
-       GenerateTables gt = new GenerateTables();
-       Area area = gt.lowerFrontLayoutA();
         
+       LoadTables load = new LoadTables();
        
-       LocalDate d = LocalDate.now();
-       LocalTime t = LocalTime.of(19, 0);
-       LocalDateTime dt = LocalDateTime.of(d, t);
-       area.bookTable(4,dt);
+       Area lowerFront = load.lowerFrontLayoutA();
+        
+       //testing BEGIN
+       LocalDateTime bookingBegin = LocalDateTime.of(LocalDate.now(), LocalTime.of(22, 0));
+       LocalDateTime bookingEnd = LocalDateTime.of(LocalDate.now(), LocalTime.of(22, 0));
+      
+       lowerFront.bookTable(4,bookingBegin,bookingEnd );
+      // lowerFront.bookTable(4,bookingEnd );
+       lowerFront.bookTable(2);
+       lowerFront.bookTable(2);
+       lowerFront.bookTable(5);
+       lowerFront.bookTable(4);
+       
+       //testing END
+       
+         System.out.println();
+         System.out.println("Bookings for today:");
          
-        for(Table table : area.getTables() ){
+        for(Table table : lowerFront.getTables() ){
+            
            System.out.println(table);
         }
-          System.out.println("Area capacity: "+ area.getAreaMaxCapacity());
                   
         
     }

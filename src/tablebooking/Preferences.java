@@ -5,15 +5,19 @@
  */
 package tablebooking;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 /**
- *
  * @author Nazareh
  */
 public class Preferences {
-    //Time when the kitchen usually closes.
-    public static LocalTime KitchenClosingTime = LocalTime.of(21, 0);
-    public static String InvalidBookingTimeMsg = "The booking time informed is invalid.";
-    public static String InvalidTableCapacity = "The value for the table capacity is invalid.";
+    //Standard time to make the booking in case it was not informed by the user.
+    public static LocalDateTime standardBookingTime = LocalDateTime.of(LocalDate.now(),LocalTime.of(19,0)) ;
+    //Time when the kitchen closes.
+    public static LocalDateTime kitchenClosingTime =  LocalDateTime.of(LocalDate.now(),LocalTime.of(21,0)) ;
+    public static String kitchenClosedMsg= "Sorry, the kitchen is already closed at this time.";
+    public static String invalidBookingTimeMsg = "The booking time informed is invalid.";
+    public static String invalidTableCapacityMsg= "The value for the table capacity is invalid.";
 }
