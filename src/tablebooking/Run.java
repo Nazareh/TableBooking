@@ -1,11 +1,7 @@
 package tablebooking;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-
 /**
- * @author Nazareh
+ * @author Nazareh nazarehturmina@gmail.com
  */
 public class Run {
 
@@ -16,7 +12,7 @@ public class Run {
         ConsoleUI c = new ConsoleUI();
         c.welcome();
         
-        //testing BEGIN
+        /*testing BEGIN
         LocalDateTime bookingBegin = LocalDateTime.of(LocalDate.now(), LocalTime.of(22, 0));
         LocalDateTime bookingEnd = LocalDateTime.of(LocalDate.now(), LocalTime.of(22, 0));
 
@@ -25,12 +21,12 @@ public class Run {
         bookingEnd = LocalDateTime.of(LocalDate.now(), LocalTime.of(20, 0));
 
         // layoutA.bookTable(4,bookingEnd );
-        restaurant.bookTable(new Booking(2, bookingBegin, bookingEnd));
+        restaurant.bookTable(new Booking(2, bookingEnd));
         restaurant.bookTable(new Booking(2, bookingEnd));
         restaurant.bookTable(new Booking(5));
         restaurant.bookTable(new Booking(4));
 
-        //testing END
+        //testing END */
         
     }
 }

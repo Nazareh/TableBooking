@@ -1,46 +1,38 @@
 package tablebooking;
 
+
 import java.time.LocalDateTime;
 import static java.time.format.DateTimeFormatter.ofPattern;
-
+/**
+ * @author Nazareh nazarehturmina@gmail.com
+ */
 public class Table{
     //VARIABLES
     private int tableNumber;
     private int maxCapacity;
-    private boolean booked;
-    private int currentBooking;
-    private LocalDateTime bookingBeginTime;
-    private LocalDateTime bookingEndTime;   
+    private Booking booking;
     private int tablePreference;  //tables with lower tablePreference will be used first;
     private int customerId; //to be implemented
     
     
     //CONSTRUCTORS 
     public Table (int tableNumber, int maxCapacity){ 
-         this(tableNumber,maxCapacity,99); 
+
+        this(tableNumber,maxCapacity,99);
     }
     public Table (int tableNumber, int maxCapacity, int tablePreference){
-        this(tableNumber,maxCapacity,0,null,null,tablePreference);
+        this(tableNumber,maxCapacity,0,null);
     }
-    public Table (int tableNumber, int maxCapacity, int currentBooking, LocalDateTime bookingBeginTime, LocalDateTime bookingEndTime){
-          /**
-           * if the table does not have any specific preference to be used first, 
-           * it gets a very low preference number
-          */
-          this(tableNumber,maxCapacity,currentBooking,bookingBeginTime,bookingEndTime,99);
-          
-     }
-    public Table (int tableNumber, int maxCapacity, int currentBooking, LocalDateTime bookingBeginTime, LocalDateTime bookingEndTime, int tablePreference){
-        if (bookingBeginTime != null) {
+
+    public Table (int tableNumber, int maxCapacity, int tablePreference,Booking booking){
+
+        if (booking != null) {
             if ( (maxCapacity < 1) 
-                 || (currentBooking > maxCapacity) )    {
+                 || (booking.getNumberOfPeople()> maxCapacity) )    {
                 throw new RuntimeException(Preferences.invalidTableCapacityMsg);
             }
             
-            setCurrentBooking(currentBooking);
-            setBookingBeginTime(bookingBeginTime);
-            setBookingEndTime(bookingEndTime);
-            setBooked(false);
+            this.booking = booking;
         }
         setTableNumber(tableNumber);
         setMaxCapacity(maxCapacity);
@@ -53,16 +45,20 @@ public class Table{
         //for now, toString will simply print the current table status.
        return printStatus();
     }
+    @Override
+    public int hashCode (){
+        return tableNumber;
+    }
     
     //METHODS
     public String printStatus(){
         String msg ; 
-       if (isBooked()){ 
+       if (booking != null){
            msg = "Table "+ tableNumber + " is booked for " +
-                  getCurrentBooking()  + " people from  " +
-                  getBookingBeginTime().format(ofPattern("HH:mm"));
+                  booking.getNumberOfPeople()+ " people from  " +
+                  booking.getBookingBegin().format(ofPattern("HH:mm"));
                    
-                     msg += (getBookingEndTime() == null) ? "hs onwards." : " to " + getBookingEndTime().format(ofPattern("HH:mm"));
+                     msg += (booking.getBookingEnd() == null) ? "hs onwards." : " to " + booking.getBookingEnd().format(ofPattern("HH:mm"));
         }
         else { msg = "Table "+tableNumber + " is not booked yet."; }
              
@@ -90,23 +86,15 @@ public class Table{
         }
         this.maxCapacity = maxCapacity;
     }
-    public boolean isBooked() {return booked; }
-    public void setBooked (boolean booked) { this.booked = booked;}
-    public int getCurrentBooking(){ return currentBooking; }
-    public void setCurrentBooking (int currentBooking) { this.currentBooking = currentBooking;
-    }
-    public LocalDateTime getBookingBeginTime() {return bookingBeginTime;}
-    public void setBookingBeginTime(LocalDateTime bookingBeginTime) {
-        validateBookingTime(bookingBeginTime,null);
-        this.bookingBeginTime = bookingBeginTime;
-    }
-    public LocalDateTime getBookingEndTime() {return bookingEndTime;}
-    public void setBookingEndTime(LocalDateTime bookingEndTime) { 
-        validateBookingTime(null,bookingEndTime);
-        this.bookingEndTime = bookingEndTime;}
+   // public boolean isBooked() {return booked; }
+  //  public void setBooked (boolean booked) { this.booked = booked;}
     public int getTablePreference() {return tablePreference;}
     public void setTablePreference(int tablePreference) { this.tablePreference = tablePreference;}
     public int getCustomerID() {return customerId;}
     public void setCustomerId(int customerId) { this.customerId = customerId;}
-    
+    public Booking getBooking() {return booking;}
+    public void setBooking(Booking booking) {
+        validateBookingTime(booking.getBookingBegin(),booking.getBookingEnd());
+        this.booking = booking;
+    }
 }

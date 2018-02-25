@@ -12,7 +12,6 @@ import java.util.List;
 public class Restaurant {
     //VARIABLES
     private List<Table> tables = new ArrayList<>();
-    private int maxCapacity;
     private static final Restaurant instance = new Restaurant();
     
     //CONSTRUCTORS
@@ -25,10 +24,9 @@ public class Restaurant {
     
     public synchronized  void addTable (int index,Table table) {
         tables.add(index,table); 
-        maxCapacity += table.getMaxCapacity();
     }
 
-    public synchronized void cancelBooking (Table table) {/*still to be implemented*/};
+    public synchronized void cancelBooking (Table table) {/*still to be implemented*/}
     
     public synchronized boolean bookTable(Booking booking){
         
@@ -40,7 +38,7 @@ public class Restaurant {
             System.out.println(Preferences.kitchenClosedMsg) ; 
             return false;
         }
-       //Lambda expression for sorting by table maxCapacity 
+       //Lambda expression for sorting by table maxCapacity and tablePreference
         Comparator<Table> comparator = Comparator.comparing(Table::getMaxCapacity).thenComparing(Table::getTablePreference);      
         tables.sort(comparator);
 
@@ -48,24 +46,25 @@ public class Restaurant {
       for(int i =0; i < getTables().size();i++ ){
           Table t =  getTables().get(i);
           if (t.getMaxCapacity() >=  numberOfPeople) {
-              if (!t.isBooked()) {
-                t.setCurrentBooking(numberOfPeople);
-                t.setBookingBeginTime(bookingBegin);
-                t.setBookingEndTime(bookingEnd);
-                t.setBooked(true);
+              //if table does not have a booking, make one.
+              if (t.getBooking() == null ) {
+                  t.setBooking(new Booking(numberOfPeople,bookingBegin,bookingEnd));
                 System.out.println("Table "+ t.getTableNumber() + " was successfully booked for "+ bookingBegin.format(ofPattern("HH:mm")));
                 return true;
               }
-              /**if the table is already booked if it possible to double book the same table
+              /*if the table is already booked, try to double book the same table
                * by create a new table in the list, with same table number and capacity
                */
-              else if(t.isBooked() && (bookingBegin.isAfter(t.getBookingEndTime()) || bookingBegin ==  t.getBookingEndTime())){
+              else if( (t.getBooking() != null) &&
+                      (bookingBegin.isAfter(t.getBooking().getBookingEnd()) ||
+                       bookingBegin.equals(t.getBooking().getBookingEnd())))
+              {
                   Table DoubleBook = new Table(t.getTableNumber(),t.getMaxCapacity());
                   addTable(i+1, DoubleBook );
               }
           }
       }
-        System.out.println("Sorry, we do not have a table available for "+numberOfPeople+ " people at " + bookingBegin.format(ofPattern("HH:mm"))) ; 
+        System.out.println("Sorry, we do not have a table available for "+numberOfPeople+ " people at " + bookingBegin.format(ofPattern("HH:mm"))) ;
         return false;
     }
     
@@ -75,8 +74,8 @@ public class Restaurant {
         addTable(new Table(2,4,10));
         addTable(new Table(3,2,11));
         addTable(new Table(4,2,10));
-        addTable(new Table(5,5,10));
-        addTable(new Table(50, 10));
+        addTable(new Table(5,4,10));
+        addTable(new Table(50, 2));
         //upper section
         addTable(new Table(7,6,1));
         addTable(new Table(8,4,2));
@@ -102,5 +101,5 @@ public class Restaurant {
     public static Restaurant getInstance (){return instance; }
     public synchronized List<Table> getTables(){ return tables;}
     public synchronized void setTables(List<Table> tables) {this.tables = tables;}
-    public synchronized int getAreaMaxCapacity () {return maxCapacity;}
+
 }

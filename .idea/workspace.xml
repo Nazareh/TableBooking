@@ -1,20 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f5c5d822-6c84-4816-ab02-f22fd7c83527" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/build/classes/tablebooking/Area.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/classes/tablebooking/LoadTables.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/build/classes/tablebooking/Preferences.class" afterPath="$PROJECT_DIR$/build/classes/tablebooking/Preferences.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/tablebooking/Table.class" afterPath="$PROJECT_DIR$/build/classes/tablebooking/Table.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/tablebooking/TableBooking.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/nbproject/private/private.xml" afterPath="$PROJECT_DIR$/nbproject/private/private.xml" />
-      <change beforePath="$PROJECT_DIR$/nbproject/project.properties" afterPath="$PROJECT_DIR$/nbproject/project.properties" />
-      <change beforePath="$PROJECT_DIR$/src/tablebooking/Area.java" afterPath="$PROJECT_DIR$/src/tablebooking/Restaurant.java" />
-      <change beforePath="$PROJECT_DIR$/src/tablebooking/LoadTables.java" afterPath="" />
+    <list default="true" id="64535290-9c9f-4450-b1af-9a9025191c1a" name="Default" comment="- Implement makeBooking method in the ConsoleUI class.&#10;- add new messages in the Preferences class.&#10;- Add Booking class to Table class as a member.&#10;- Adapt project to run in the Intellij IDE.">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/ant.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/TableBooking.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/build/built-jar.properties" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/tablebooking/Booking.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/tablebooking/ConsoleUI.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/tablebooking/Restaurant.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/build/classes/tablebooking/Run.class" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/README.TXT" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/TableBooking.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/allclasses-frame.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/allclasses-noframe.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/constant-values.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/deprecated-list.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/help-doc.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/index-files/index-1.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/index-files/index-10.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/index-files/index-11.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/index-files/index-12.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/index-files/index-13.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/index-files/index-2.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/index-files/index-3.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/index-files/index-4.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/index-files/index-5.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/index-files/index-6.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/index-files/index-7.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/index-files/index-8.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/index-files/index-9.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/overview-tree.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/package-list" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/script.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/stylesheet.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/tablebooking/Booking.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/tablebooking/ConsoleUI.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/tablebooking/Preferences.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/tablebooking/Restaurant.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/tablebooking/Run.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/tablebooking/Table.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/tablebooking/class-use/Booking.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/tablebooking/class-use/ConsoleUI.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/tablebooking/class-use/Preferences.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/tablebooking/class-use/Restaurant.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/tablebooking/class-use/Run.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/tablebooking/class-use/Table.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/tablebooking/package-frame.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/tablebooking/package-summary.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/tablebooking/package-tree.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/dist/javadoc/tablebooking/package-use.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/TableBooking.iml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/tablebooking/ConsoleUI.java" afterPath="$PROJECT_DIR$/src/tablebooking/ConsoleUI.java" />
       <change beforePath="$PROJECT_DIR$/src/tablebooking/Preferences.java" afterPath="$PROJECT_DIR$/src/tablebooking/Preferences.java" />
+      <change beforePath="$PROJECT_DIR$/src/tablebooking/Restaurant.java" afterPath="$PROJECT_DIR$/src/tablebooking/Restaurant.java" />
+      <change beforePath="$PROJECT_DIR$/src/tablebooking/Run.java" afterPath="$PROJECT_DIR$/src/tablebooking/Run.java" />
       <change beforePath="$PROJECT_DIR$/src/tablebooking/Table.java" afterPath="$PROJECT_DIR$/src/tablebooking/Table.java" />
-      <change beforePath="$PROJECT_DIR$/src/tablebooking/TableBooking.java" afterPath="$PROJECT_DIR$/src/tablebooking/Run.java" />
     </list>
+    <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,17 +70,136 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="Run.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Run.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tablebooking/Run.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+            <state relative-caret-position="50">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="69" column="4" lean-forward="false" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Restaurant.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tablebooking/Restaurant.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+              <folding>
+                <element signature="e#557#558#0" expanded="true" />
+                <element signature="e#608#609#0" expanded="true" />
+                <element signature="e#678#679#0" expanded="true" />
+                <element signature="e#718#719#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Table.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tablebooking/Table.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="80" column="4" lean-forward="false" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#634#635#0" expanded="true" />
+                <element signature="e#686#687#0" expanded="true" />
+                <element signature="e#1408#1409#0" expanded="true" />
+                <element signature="e#1442#1443#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Booking.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tablebooking/Booking.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+              <folding>
+                <element signature="e#1032#1033#0" expanded="true" />
+                <element signature="e#1069#1070#0" expanded="true" />
+                <element signature="e#1222#1223#0" expanded="true" />
+                <element signature="e#1257#1258#0" expanded="true" />
+                <element signature="e#1410#1411#0" expanded="true" />
+                <element signature="e#1443#1444#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConsoleUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tablebooking/ConsoleUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="155" column="24" lean-forward="false" selection-start-line="155" selection-start-column="24" selection-end-line="155" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1869#1870#0" expanded="true" />
+                <element signature="e#1899#1900#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/javadoc/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="69" column="215" lean-forward="false" selection-start-line="69" selection-start-column="215" selection-end-line="69" selection-end-column="215" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="genfiles.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nbproject/genfiles.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Preferences.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/tablebooking/Preferences.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="478">
+              <caret line="48" column="24" lean-forward="false" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="built-jar.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/built-jar.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,15 +212,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/tablebooking/BookingBuilder.java" />
+        <option value="$PROJECT_DIR$/src/tablebooking/Booking.java" />
+        <option value="$PROJECT_DIR$/src/tablebooking/Table.java" />
+        <option value="$PROJECT_DIR$/src/tablebooking/Restaurant.java" />
         <option value="$PROJECT_DIR$/src/tablebooking/Run.java" />
+        <option value="$PROJECT_DIR$/src/tablebooking/ConsoleUI.java" />
+        <option value="$PROJECT_DIR$/src/tablebooking/Preferences.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="y" value="20" />
-    <option name="width" value="1400" />
-    <option name="height" value="980" />
+    <option name="x" value="950" />
+    <option name="width" value="980" />
+    <option name="height" value="1030" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -72,6 +242,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -94,14 +268,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/build.xml" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -122,6 +293,25 @@
       <option name="HEIGHT" value="300" />
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <module />
+    </configuration>
+    <configuration name="Run" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tablebooking.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="tablebooking.Run" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="TableBooking" />
+      <envs />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -197,6 +387,11 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Application.Run" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -206,11 +401,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f5c5d822-6c84-4816-ab02-f22fd7c83527" name="Default" comment="" />
-      <created>1519109908133</created>
+      <changelist id="64535290-9c9f-4450-b1af-9a9025191c1a" name="Default" comment="" />
+      <created>1519271623593</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1519109908133</updated>
+      <updated>1519271623593</updated>
     </task>
     <servers />
   </component>
@@ -219,45 +414,342 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24199288" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6986951" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15065244" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29181495" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977462" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32992035" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4424674" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="- Implement makeBooking method in the ConsoleUI class.&#10;- add new messages in the Preferences class.&#10;- Add Booking class to Table class as a member.&#10;- Adapt project to run in the Intellij IDE." />
+    <option name="LAST_COMMIT_MESSAGE" value="- Implement makeBooking method in the ConsoleUI class.&#10;- add new messages in the Preferences class.&#10;- Add Booking class to Table class as a member.&#10;- Adapt project to run in the Intellij IDE." />
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="13" />
+    </breakpoint-manager>
     <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+    <buildFile url="file://$PROJECT_DIR$/build.xml">
+      <targetFilters>
+        <filter targetName="default" isVisible="true" />
+        <filter targetName="-pre-init" isVisible="false" />
+        <filter targetName="-init-private" isVisible="false" />
+        <filter targetName="-init-user" isVisible="false" />
+        <filter targetName="-init-project" isVisible="false" />
+        <filter targetName="-do-init" isVisible="false" />
+        <filter targetName="-post-init" isVisible="false" />
+        <filter targetName="-init-check" isVisible="false" />
+        <filter targetName="-init-macrodef-property" isVisible="false" />
+        <filter targetName="-init-macrodef-javac-with-processors" isVisible="false" />
+        <filter targetName="-init-macrodef-javac-without-processors" isVisible="false" />
+        <filter targetName="-init-macrodef-javac" isVisible="false" />
+        <filter targetName="-init-macrodef-junit-init" isVisible="false" />
+        <filter targetName="-init-test-properties" isVisible="false" />
+        <filter targetName="-init-macrodef-junit-single" isVisible="false" />
+        <filter targetName="-init-macrodef-junit-batch" isVisible="false" />
+        <filter targetName="-init-macrodef-junit" isVisible="false" />
+        <filter targetName="-init-macrodef-testng" isVisible="false" />
+        <filter targetName="-init-macrodef-test-impl" isVisible="false" />
+        <filter targetName="-init-macrodef-junit-impl" isVisible="false" />
+        <filter targetName="-init-macrodef-testng-impl" isVisible="false" />
+        <filter targetName="-init-macrodef-test" isVisible="false" />
+        <filter targetName="-init-macrodef-junit-debug" isVisible="false" />
+        <filter targetName="-init-macrodef-junit-debug-batch" isVisible="false" />
+        <filter targetName="-init-macrodef-junit-debug-impl" isVisible="false" />
+        <filter targetName="-init-macrodef-testng-debug" isVisible="false" />
+        <filter targetName="-init-macrodef-testng-debug-impl" isVisible="false" />
+        <filter targetName="-init-macrodef-test-debug-junit" isVisible="false" />
+        <filter targetName="-init-macrodef-test-debug-testng" isVisible="false" />
+        <filter targetName="-init-macrodef-test-debug" isVisible="false" />
+        <filter targetName="profile-init" isVisible="false" />
+        <filter targetName="-profile-pre-init" isVisible="false" />
+        <filter targetName="-profile-post-init" isVisible="false" />
+        <filter targetName="-profile-init-macrodef-profile" isVisible="false" />
+        <filter targetName="-profile-init-check" isVisible="false" />
+        <filter targetName="-init-macrodef-nbjpda" isVisible="false" />
+        <filter targetName="-init-debug-args" isVisible="false" />
+        <filter targetName="-init-macrodef-debug" isVisible="false" />
+        <filter targetName="-init-macrodef-java" isVisible="false" />
+        <filter targetName="-init-macrodef-copylibs" isVisible="false" />
+        <filter targetName="-init-presetdef-jar" isVisible="false" />
+        <filter targetName="-init-ap-cmdline-properties" isVisible="false" />
+        <filter targetName="-init-ap-cmdline-supported" isVisible="false" />
+        <filter targetName="-init-ap-cmdline" isVisible="false" />
+        <filter targetName="init" isVisible="false" />
+        <filter targetName="-deps-jar-init" isVisible="false" />
+        <filter targetName="-warn-already-built-jar" isVisible="false" />
+        <filter targetName="deps-jar" isVisible="false" />
+        <filter targetName="-verify-automatic-build" isVisible="false" />
+        <filter targetName="-check-automatic-build" isVisible="false" />
+        <filter targetName="-clean-after-automatic-build" isVisible="false" />
+        <filter targetName="-pre-pre-compile" isVisible="false" />
+        <filter targetName="-pre-compile" isVisible="false" />
+        <filter targetName="-compile-depend" isVisible="false" />
+        <filter targetName="-do-compile" isVisible="false" />
+        <filter targetName="-copy-persistence-xml" isVisible="false" />
+        <filter targetName="-post-compile" isVisible="false" />
+        <filter targetName="compile" isVisible="true" />
+        <filter targetName="-pre-compile-single" isVisible="false" />
+        <filter targetName="-do-compile-single" isVisible="false" />
+        <filter targetName="-post-compile-single" isVisible="false" />
+        <filter targetName="compile-single" isVisible="false" />
+        <filter targetName="-pre-pre-jar" isVisible="false" />
+        <filter targetName="-pre-jar" isVisible="false" />
+        <filter targetName="-do-jar-create-manifest" isVisible="false" />
+        <filter targetName="-do-jar-copy-manifest" isVisible="false" />
+        <filter targetName="-do-jar-set-mainclass" isVisible="false" />
+        <filter targetName="-do-jar-set-profile" isVisible="false" />
+        <filter targetName="-do-jar-set-splashscreen" isVisible="false" />
+        <filter targetName="-do-jar-copylibs" isVisible="false" />
+        <filter targetName="-do-jar-jar" isVisible="false" />
+        <filter targetName="-do-jar-delete-manifest" isVisible="false" />
+        <filter targetName="-do-jar-without-libraries" isVisible="false" />
+        <filter targetName="-do-jar-with-libraries" isVisible="false" />
+        <filter targetName="-post-jar" isVisible="false" />
+        <filter targetName="-do-jar" isVisible="false" />
+        <filter targetName="jar" isVisible="true" />
+        <filter targetName="run" isVisible="true" />
+        <filter targetName="-do-not-recompile" isVisible="false" />
+        <filter targetName="run-single" isVisible="false" />
+        <filter targetName="run-test-with-main" isVisible="false" />
+        <filter targetName="-debug-start-debugger" isVisible="false" />
+        <filter targetName="-debug-start-debugger-main-test" isVisible="false" />
+        <filter targetName="-debug-start-debuggee" isVisible="false" />
+        <filter targetName="debug" isVisible="true" />
+        <filter targetName="-debug-start-debugger-stepinto" isVisible="false" />
+        <filter targetName="debug-stepinto" isVisible="false" />
+        <filter targetName="-debug-start-debuggee-single" isVisible="false" />
+        <filter targetName="debug-single" isVisible="false" />
+        <filter targetName="-debug-start-debuggee-main-test" isVisible="false" />
+        <filter targetName="debug-test-with-main" isVisible="false" />
+        <filter targetName="-pre-debug-fix" isVisible="false" />
+        <filter targetName="-do-debug-fix" isVisible="false" />
+        <filter targetName="debug-fix" isVisible="false" />
+        <filter targetName="-profile-pre72" isVisible="true" />
+        <filter targetName="-profile-single-pre72" isVisible="true" />
+        <filter targetName="-profile-applet-pre72" isVisible="false" />
+        <filter targetName="-profile-test-single-pre72" isVisible="false" />
+        <filter targetName="-profile-check" isVisible="false" />
+        <filter targetName="profile" isVisible="true" />
+        <filter targetName="profile-single" isVisible="true" />
+        <filter targetName="profile-test-single" isVisible="true" />
+        <filter targetName="profile-test" isVisible="true" />
+        <filter targetName="profile-test-with-main" isVisible="true" />
+        <filter targetName="profile-applet" isVisible="false" />
+        <filter targetName="-javadoc-build" isVisible="false" />
+        <filter targetName="-javadoc-browse" isVisible="false" />
+        <filter targetName="javadoc" isVisible="true" />
+        <filter targetName="-pre-pre-compile-test" isVisible="false" />
+        <filter targetName="-pre-compile-test" isVisible="false" />
+        <filter targetName="-compile-test-depend" isVisible="false" />
+        <filter targetName="-do-compile-test" isVisible="false" />
+        <filter targetName="-post-compile-test" isVisible="false" />
+        <filter targetName="compile-test" isVisible="false" />
+        <filter targetName="-pre-compile-test-single" isVisible="false" />
+        <filter targetName="-do-compile-test-single" isVisible="false" />
+        <filter targetName="-post-compile-test-single" isVisible="false" />
+        <filter targetName="compile-test-single" isVisible="false" />
+        <filter targetName="-pre-test-run" isVisible="false" />
+        <filter targetName="-do-test-run" isVisible="false" />
+        <filter targetName="-post-test-run" isVisible="false" />
+        <filter targetName="test-report" isVisible="false" />
+        <filter targetName="-test-browse" isVisible="false" />
+        <filter targetName="test" isVisible="true" />
+        <filter targetName="-pre-test-run-single" isVisible="false" />
+        <filter targetName="-do-test-run-single" isVisible="false" />
+        <filter targetName="-post-test-run-single" isVisible="false" />
+        <filter targetName="test-single" isVisible="true" />
+        <filter targetName="-do-test-run-single-method" isVisible="false" />
+        <filter targetName="-post-test-run-single-method" isVisible="false" />
+        <filter targetName="test-single-method" isVisible="true" />
+        <filter targetName="-debug-start-debuggee-test" isVisible="false" />
+        <filter targetName="-debug-start-debuggee-test-method" isVisible="false" />
+        <filter targetName="-debug-start-debugger-test" isVisible="false" />
+        <filter targetName="debug-test" isVisible="false" />
+        <filter targetName="debug-test-method" isVisible="false" />
+        <filter targetName="-do-debug-fix-test" isVisible="false" />
+        <filter targetName="debug-fix-test" isVisible="false" />
+        <filter targetName="run-applet" isVisible="false" />
+        <filter targetName="-debug-start-debuggee-applet" isVisible="false" />
+        <filter targetName="debug-applet" isVisible="false" />
+        <filter targetName="-deps-clean-init" isVisible="false" />
+        <filter targetName="-warn-already-built-clean" isVisible="false" />
+        <filter targetName="deps-clean" isVisible="false" />
+        <filter targetName="-do-clean" isVisible="false" />
+        <filter targetName="-post-clean" isVisible="false" />
+        <filter targetName="clean" isVisible="true" />
+        <filter targetName="-check-call-dep" isVisible="false" />
+        <filter targetName="-maybe-call-dep" isVisible="false" />
+      </targetFilters>
+      <expanded value="true" />
+    </buildFile>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/tablebooking/Run.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="250">
+          <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tablebooking/Restaurant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="42" column="79" lean-forward="false" selection-start-line="42" selection-start-column="79" selection-end-line="42" selection-end-column="79" />
+          <folding>
+            <element signature="e#557#558#0" expanded="true" />
+            <element signature="e#608#609#0" expanded="true" />
+            <element signature="e#678#679#0" expanded="true" />
+            <element signature="e#718#719#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tablebooking/Booking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="27" column="82" lean-forward="false" selection-start-line="27" selection-start-column="82" selection-end-line="27" selection-end-column="82" />
+          <folding>
+            <element signature="e#1032#1033#0" expanded="true" />
+            <element signature="e#1069#1070#0" expanded="true" />
+            <element signature="e#1222#1223#0" expanded="true" />
+            <element signature="e#1257#1258#0" expanded="true" />
+            <element signature="e#1410#1411#0" expanded="true" />
+            <element signature="e#1443#1444#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tablebooking/ConsoleUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4000">
+          <caret line="167" column="29" lean-forward="false" selection-start-line="167" selection-start-column="29" selection-end-line="167" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1869#1870#0" expanded="true" />
+            <element signature="e#1899#1900#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tablebooking/Preferences.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="29" column="43" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tablebooking/Table.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="925">
+          <caret line="37" column="36" lean-forward="true" selection-start-line="37" selection-start-column="36" selection-end-line="37" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#634#635#0" expanded="true" />
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#1408#1409#0" expanded="true" />
+            <element signature="e#1442#1443#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tablebooking/Run.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="12" column="28" lean-forward="false" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tablebooking/Table.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#634#635#0" expanded="true" />
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#1408#1409#0" expanded="true" />
+            <element signature="e#1442#1443#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tablebooking/Booking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="27" column="82" lean-forward="false" selection-start-line="27" selection-start-column="82" selection-end-line="27" selection-end-column="82" />
+          <folding>
+            <element signature="e#1032#1033#0" expanded="true" />
+            <element signature="e#1069#1070#0" expanded="true" />
+            <element signature="e#1222#1223#0" expanded="true" />
+            <element signature="e#1257#1258#0" expanded="true" />
+            <element signature="e#1410#1411#0" expanded="true" />
+            <element signature="e#1443#1444#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tablebooking/ConsoleUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4000">
+          <caret line="167" column="29" lean-forward="true" selection-start-line="167" selection-start-column="29" selection-end-line="167" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1869#1870#0" expanded="true" />
+            <element signature="e#1899#1900#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tablebooking/Preferences.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="29" column="43" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tablebooking/Restaurant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="950">
+          <caret line="42" column="79" lean-forward="false" selection-start-line="42" selection-start-column="79" selection-end-line="42" selection-end-column="79" />
+          <folding>
+            <element signature="e#557#558#0" expanded="true" />
+            <element signature="e#608#609#0" expanded="true" />
+            <element signature="e#678#679#0" expanded="true" />
+            <element signature="e#718#719#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -269,10 +761,113 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="22" column="79" lean-forward="false" selection-start-line="22" selection-start-column="79" selection-end-line="22" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tablebooking/BookingBuilder.java" />
+    <entry file="file://$PROJECT_DIR$/src/tablebooking/Booking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="27" column="11" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
+          <folding>
+            <element signature="e#1032#1033#0" expanded="true" />
+            <element signature="e#1069#1070#0" expanded="true" />
+            <element signature="e#1222#1223#0" expanded="true" />
+            <element signature="e#1257#1258#0" expanded="true" />
+            <element signature="e#1410#1411#0" expanded="true" />
+            <element signature="e#1443#1444#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/tablebooking/Run.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
+        <state relative-caret-position="50">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nbproject/genfiles.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="69" column="4" lean-forward="false" selection-start-line="69" selection-start-column="4" selection-end-line="69" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/built-jar.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tablebooking/Restaurant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="24" column="4" lean-forward="false" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+          <folding>
+            <element signature="e#557#558#0" expanded="true" />
+            <element signature="e#608#609#0" expanded="true" />
+            <element signature="e#678#679#0" expanded="true" />
+            <element signature="e#718#719#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tablebooking/ConsoleUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="155" column="24" lean-forward="false" selection-start-line="155" selection-start-column="24" selection-end-line="155" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1869#1870#0" expanded="true" />
+            <element signature="e#1899#1900#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/javadoc/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="69" column="215" lean-forward="false" selection-start-line="69" selection-start-column="215" selection-end-line="69" selection-end-column="215" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tablebooking/Table.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="80" column="4" lean-forward="false" selection-start-line="80" selection-start-column="4" selection-end-line="80" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#634#635#0" expanded="true" />
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#1408#1409#0" expanded="true" />
+            <element signature="e#1442#1443#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tablebooking/Preferences.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="48" column="24" lean-forward="false" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
           <folding />
         </state>
       </provider>
