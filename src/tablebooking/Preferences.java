@@ -15,6 +15,9 @@ import static java.time.format.DateTimeFormatter.ofPattern;
  * @author Nazareh nazarehturmina@gmail.com
  */
 public class Preferences {
+
+    //Standart unkown customer name
+    public static Customer unkownCustomer = new Customer("John Doe");
     //Standard time to make the booking in case it was not informed by the user.
     public static LocalDateTime standardBookingTime = LocalDateTime.of(LocalDate.now(),LocalTime.of(19,0)) ;
     //Time when the kitchen closes.

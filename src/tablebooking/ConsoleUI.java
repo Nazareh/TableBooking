@@ -138,7 +138,7 @@ public class ConsoleUI {
             exit = false;
             while (!exit && startPoint <=4){
                 startPoint = 4;
-                Booking booking = new Booking(numberOfPeople, bookingBegin, bookingEnd);
+                Booking booking = new Booking(numberOfPeople, Preferences.unkownCustomer,bookingBegin, bookingEnd);
                 System.out.println(Preferences.getConfirmBookingMsg(booking));
                 answer = reader.readLine().substring(0, 1).toUpperCase();
                 switch (answer) {

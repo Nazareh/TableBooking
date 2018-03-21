@@ -1,7 +1,6 @@
 package tablebooking;
 
 import java.time.LocalDateTime;
-import static java.time.format.DateTimeFormatter.ofPattern;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -26,20 +25,37 @@ public class Restaurant {
         tables.add(index,table); 
     }
 
-    public synchronized void cancelBooking (Table table) {/*still to be implemented*/}
-    
+    public synchronized boolean cancelBooking (Booking booking) {
+        List<Table> bookedTables = getBookedTables();
+        for(Table table:bookedTables){
+            if (table.getBooking().equals(booking)){
+                tables.remove(table);
+                return true;
+            }
+        }
+            return false;
+    }
+
+    public synchronized List<Table> getBookedTables (){
+        List<Table> bookedTables = new ArrayList();
+        for (Table table:tables){
+            if (table.getBooking() != null)
+                bookedTables.add(table);
+        }
+        return bookedTables;
+    }
     public synchronized boolean bookTable(Booking booking){
         
         int numberOfPeople = booking.getNumberOfPeople();
         LocalDateTime bookingBegin = booking.getBookingBegin();
         LocalDateTime bookingEnd = booking.getBookingEnd();
-        
-        if (bookingBegin.isAfter(Preferences.kitchenClosingTime) ){
-            System.out.println(Preferences.kitchenClosedMsg) ; 
+
+        if (!validBookingTime(bookingBegin,bookingEnd)){
             return false;
         }
        //Lambda expression for sorting by table maxCapacity and tablePreference
-        Comparator<Table> comparator = Comparator.comparing(Table::getMaxCapacity).thenComparing(Table::getTablePreference);      
+        Comparator<Table> comparator = Comparator.comparing(Table::getMaxCapacity)
+                                                 .thenComparing(Table::getTablePreference);
         tables.sort(comparator);
 
       //Find the first available table
@@ -48,12 +64,11 @@ public class Restaurant {
           if (t.getMaxCapacity() >=  numberOfPeople) {
               //if table does not have a booking, make one.
               if (t.getBooking() == null ) {
-                  t.setBooking(new Booking(numberOfPeople,bookingBegin,bookingEnd));
-                System.out.println("Table "+ t.getTableNumber() + " was successfully booked for "+ bookingBegin.format(ofPattern("HH:mm")));
+                  t.setBooking(booking);
                 return true;
               }
               /*if the table is already booked, try to double book the same table
-               * by create a new table in the list, with same table number and capacity
+               * by creating a new table in the list, with same table number and capacity
                */
               else if( (t.getBooking() != null) &&
                       (bookingBegin.isAfter(t.getBooking().getBookingEnd()) ||
@@ -64,12 +79,22 @@ public class Restaurant {
               }
           }
       }
-        System.out.println("Sorry, we do not have a table available for "+numberOfPeople+ " people at " + bookingBegin.format(ofPattern("HH:mm"))) ;
         return false;
     }
-    
+    private boolean validBookingTime( LocalDateTime bookingBeginTime,LocalDateTime bookingEndTime ){
+        if ((bookingBeginTime == null && bookingEndTime == null) || //both parameters are null
+                (bookingBeginTime != null && (bookingBeginTime.isAfter(Preferences.kitchenClosingTime) ||
+                                              bookingBeginTime.isEqual(Preferences.kitchenClosingTime))) || //kitchen is closed
+                ((bookingBeginTime != null && bookingEndTime != null) && bookingEndTime.isBefore(bookingBeginTime))) // EndTime is before beginTime
+        {
+            return false;
+        }
+        return true;
+    }
+
     public synchronized void loadTablesLayoutA() {
         //lower section
+        tables = new ArrayList<>();
         addTable(new Table(1,2,11));
         addTable(new Table(2,4,10));
         addTable(new Table(3,2,11));
