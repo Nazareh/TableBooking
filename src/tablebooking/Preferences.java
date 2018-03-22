@@ -14,11 +14,9 @@ import static java.time.format.DateTimeFormatter.ofPattern;
 /**
  * @author Nazareh nazarehturmina@gmail.com
  */
-public class Preferences {
+class Preferences {
 
-    //Standart unkown customer name
     public static Customer unkownCustomer = new Customer("John Doe");
-    //Standard time to make the booking in case it was not informed by the user.
     public static LocalDateTime standardBookingTime = LocalDateTime.of(LocalDate.now(),LocalTime.of(19,0)) ;
     //Time when the kitchen closes.
     public static LocalDateTime kitchenClosingTime =  LocalDateTime.of(LocalDate.now(),LocalTime.of(21,0)) ;
@@ -32,7 +30,7 @@ public class Preferences {
     public static String bookingForTodayMsg = "Is the booking for today?  YES(Y) or NO(N):";
     public static String bookingDateTimeMsg = "Please inform the DATE and TIME you like to make the booking for in the format DD/MM/YYYY HH24:mm: ";
     public static String informBookingBeginTimeMsg = "Please inform the TIME you like to make the booking for in the format HH24:mm: ";
-    public static String informBookingEndMsg = "Would like to inform the time when the booking will END?";
+    public static String informBookingEndMsg = "Would like to inform the time when the booking will end? YES(Y) or NO(N):";
     public static String bookingConfirmedMsg = "Booking Confirmed!";
     public static String bookingCanceledMsg = "Booking Canceled!";
     public static String tableNotAvailableMsg = "Sorry, we do not have a table available for this number of people at this time";
@@ -49,7 +47,7 @@ public class Preferences {
     }
     public static String getConfirmBookingMsg(Booking booking){
         return "Would you like to confirm the booking for "+ booking.getNumberOfPeople() +
-                " on "+ booking.getBookingBegin().toLocalDate().format(ofPattern("dd/MM/YYY")).toString() +
+                " on "+ booking.getBookingBegin().toLocalDate().format(ofPattern("dd/MM/YYY")) +
                 " at " + booking.getBookingBegin().toLocalTime().toString() +"?";
     }
 

@@ -10,42 +10,75 @@ import java.util.List;
  */
 public class Restaurant {
     //VARIABLES
-    private List<Table> tables = new ArrayList<>();
+    private List<Table> tablesLayout = new ArrayList<>();
     private static final Restaurant instance = new Restaurant();
-    
+
     //CONSTRUCTORS
     private Restaurant() {}
             
     //METHODS
-    public synchronized void addTable (Table table) {
-        addTable(getTables().size(), table);
-    }
-    
-    public synchronized  void addTable (int index,Table table) {
-        tables.add(index,table); 
-    }
-
     public synchronized boolean cancelBooking (Booking booking) {
         List<Table> bookedTables = getBookedTables();
         for(Table table:bookedTables){
             if (table.getBooking().equals(booking)){
-                tables.remove(table);
+                tablesLayout.remove(table);
                 return true;
             }
         }
             return false;
     }
-
     public synchronized List<Table> getBookedTables (){
         List<Table> bookedTables = new ArrayList();
-        for (Table table:tables){
+        for (Table table:tablesLayout){
             if (table.getBooking() != null)
                 bookedTables.add(table);
         }
         return bookedTables;
     }
-    public synchronized boolean bookTable(Booking booking){
-        
+    /*
+   This method extract all previous bookings  PLUS a new booking
+   and try to fit them in the same table layout. If it does not work,
+   try a different a layout. If still doesnt work, returns the original one.
+    */
+    public synchronized boolean tryToBookTable(Booking newBooking){
+        List<Table> currentLayout = getCurrentTableLayout();
+        boolean foundBetterLayout;
+
+        //List containing all possible table layouts
+        List<List<Table>> allLayouts = new ArrayList<>();
+        allLayouts.add(loadTablesLayoutA());
+        allLayouts.add(loadTablesLayoutB());
+
+        //adds previous bookings + new booking to a List<Booking>
+        List<Booking> previousBookings = new ArrayList<>();
+        for (Table table:getBookedTables() ){
+            previousBookings.add(table.getBooking());
+        }
+        previousBookings.add(newBooking);
+
+        /*try to place the new booking in the current layout,
+        if it does not work, tries a different one.
+         */
+        for(List<Table> newTableLayout: allLayouts){
+            tablesLayout = newTableLayout;
+            foundBetterLayout = true;
+            bookings:
+            for (Booking b:previousBookings){
+                if (!bookTable(b)) {
+                    tablesLayout = currentLayout;
+                    foundBetterLayout = false;
+                    break bookings;
+                }
+
+            }
+            if (foundBetterLayout) {
+                return true;
+            }
+        }
+        return false;
+    }
+    private boolean bookTable(Booking booking){
+
         int numberOfPeople = booking.getNumberOfPeople();
         LocalDateTime bookingBegin = booking.getBookingBegin();
         LocalDateTime bookingEnd = booking.getBookingEnd();
@@ -56,11 +89,11 @@ public class Restaurant {
        //Lambda expression for sorting by table maxCapacity and tablePreference
         Comparator<Table> comparator = Comparator.comparing(Table::getMaxCapacity)
                                                  .thenComparing(Table::getTablePreference);
-        tables.sort(comparator);
+        tablesLayout.sort(comparator);
 
       //Find the first available table
-      for(int i =0; i < getTables().size();i++ ){
-          Table t =  getTables().get(i);
+      for(int i =0; i < getCurrentTableLayout().size();i++ ){
+          Table t =  getCurrentTableLayout().get(i);
           if (t.getMaxCapacity() >=  numberOfPeople) {
               //if table does not have a booking, make one.
               if (t.getBooking() == null ) {
@@ -75,56 +108,87 @@ public class Restaurant {
                        bookingBegin.equals(t.getBooking().getBookingEnd())))
               {
                   Table DoubleBook = new Table(t.getTableNumber(),t.getMaxCapacity());
-                  addTable(i+1, DoubleBook );
+                  tablesLayout.add(i + 1, DoubleBook);
               }
           }
       }
-        return false;
+            return false;
     }
     private boolean validBookingTime( LocalDateTime bookingBeginTime,LocalDateTime bookingEndTime ){
-        if ((bookingBeginTime == null && bookingEndTime == null) || //both parameters are null
-                (bookingBeginTime != null && (bookingBeginTime.isAfter(Preferences.kitchenClosingTime) ||
-                                              bookingBeginTime.isEqual(Preferences.kitchenClosingTime))) || //kitchen is closed
-                ((bookingBeginTime != null && bookingEndTime != null) && bookingEndTime.isBefore(bookingBeginTime))) // EndTime is before beginTime
-        {
-            return false;
-        }
-        return true;
+        return (bookingBeginTime != null || bookingEndTime != null) && //both parameters are null
+                (bookingBeginTime == null || (!bookingBeginTime.isAfter(Preferences.kitchenClosingTime) &&
+                        !bookingBeginTime.isEqual(Preferences.kitchenClosingTime))) && //kitchen is closed
+                ((bookingBeginTime == null || bookingEndTime == null) || !bookingEndTime.isBefore(bookingBeginTime));
     }
 
-    public synchronized void loadTablesLayoutA() {
+    public List<Table> loadTablesLayoutA() {
         //lower section
-        tables = new ArrayList<>();
-        addTable(new Table(1,2,11));
-        addTable(new Table(2,4,10));
-        addTable(new Table(3,2,11));
-        addTable(new Table(4,2,10));
-        addTable(new Table(5,4,10));
-        addTable(new Table(50, 2));
+        List<Table> layout = new ArrayList<>();
+        layout.add(new Table(1,2,11));
+        layout.add(new Table(2,4,10));
+        layout.add(new Table(3,2,11));
+        layout.add(new Table(4,2,10));
+        layout.add(new Table(5,4,10));
+        layout.add(new Table(50, 2));
         //upper section
-        addTable(new Table(7,6,1));
-        addTable(new Table(8,4,2));
-        addTable(new Table(9,4,2));
-        addTable(new Table(10,5,2));
-        addTable(new Table(11,4,2));
-        addTable(new Table(12,2,3));
-        addTable(new Table(13,4,3));
-        addTable(new Table(14,2,3));
-        addTable(new Table(15,3,4));
-        addTable(new Table(17,6,2));
-        addTable(new Table(18,2,1));
-        addTable(new Table(19,4,1));
+        layout.add(new Table(7,6,1));
+        layout.add(new Table(8,4,2));
+        layout.add(new Table(9,4,2));
+        layout.add(new Table(10,5,2));
+        layout.add(new Table(11,4,2));
+        layout.add(new Table(12,2,3));
+        layout.add(new Table(13,4,3));
+        layout.add(new Table(14,2,3));
+        layout.add(new Table(15,3,4));
+        layout.add(new Table(17,6,2));
+        layout.add(new Table(18,2,1));
+        layout.add(new Table(19,4,1));
         //backroom  section
-        addTable(new Table(21, 6,20));
-        addTable(new Table(22, 8,20));
-        addTable(new Table(23, 4,20));
-        addTable(new Table(24, 2,20));
-        addTable(new Table(25, 5,20));
+        layout.add(new Table(21, 6,20));
+        layout.add(new Table(22, 8,20));
+        layout.add(new Table(23, 4,20));
+        layout.add(new Table(24, 2,20));
+        layout.add(new Table(25, 5,20));
+        return layout;
     }
-    
+    public List<Table> loadTablesLayoutB() {
+        //lower section
+        List<Table> layout = new ArrayList<>();
+        layout.add(new Table(1,2,11));
+        layout.add(new Table(2,4,10));
+        layout.add(new Table(3,2,11));
+        layout.add(new Table(4,2,10));
+        layout.add(new Table(5,4,10));
+        layout.add(new Table(50, 2));
+        //upper section
+        layout.add(new Table(7,6,1));
+        layout.add(new Table(8,4,2));
+        layout.add(new Table(9,4,2));
+        layout.add(new Table(10,5,2));
+        layout.add(new Table(11,4,2));
+        layout.add(new Table(12,2,3));
+        layout.add(new Table(13,4,3));
+        layout.add(new Table(14,2,3));
+        layout.add(new Table(15,3,4));
+        layout.add(new Table(17,10,2));
+        layout.add(new Table(19,2,1));
+        //backroom  section
+        layout.add(new Table(21, 6,20));
+        layout.add(new Table(22, 8,20));
+        layout.add(new Table(23, 4,20));
+        layout.add(new Table(24, 2,20));
+        layout.add(new Table(25, 5,20));
+        return layout;
+    }
     //GETTERS and SETTERS
     public static Restaurant getInstance (){return instance; }
-    public synchronized List<Table> getTables(){ return tables;}
-    public synchronized void setTables(List<Table> tables) {this.tables = tables;}
-
+    public synchronized List<Table> getCurrentTableLayout(){ return tablesLayout;}
+    public synchronized void setTablesLayout(List<Table> tables) {this.tablesLayout = tables;}
+    public synchronized Table getTable(int tableNumber){
+        for(Table table : getInstance().getCurrentTableLayout()){
+            if (table.getTableNumber() == tableNumber)
+               return table;
+        }
+        return null;
+    }
 }

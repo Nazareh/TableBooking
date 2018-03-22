@@ -6,11 +6,12 @@ import java.io.InputStreamReader;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.Arrays;
 
 /**
  * @author Nazareh nazarehturmina@gmail.com
  */
-public class ConsoleUI {
+class ConsoleUI {
     private BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     private int numberOfPeople = 0;
     private LocalDate bookingDate = null;
@@ -38,7 +39,7 @@ public class ConsoleUI {
                 exit = answer.equals("E");
             }
             catch (Exception e ){
-                System.out.println(e.getStackTrace());
+                System.out.println(Arrays.toString(e.getStackTrace()));
             }
         }
         while (!exit);
@@ -101,18 +102,11 @@ public class ConsoleUI {
                 startPoint = 2;
                 System.out.println(Preferences.informBookingBeginTimeMsg);
                 answer = reader.readLine();
-                switch (answer) {
-                    case "Y":
-                        bookingBeginTime = LocalTime.of(
+                bookingBeginTime = LocalTime.of(
                                 Integer.parseInt(answer.substring(0,2)), //day DD
                                 Integer.parseInt(answer.substring(3,5))); //month MM
-                        exit = true;
-                        break;
-                    case "N":
-                        bookingBeginTime = Preferences.standardBookingTime.toLocalTime();
-                        exit = true;
-                        break;
-                }
+                exit = true;
+                break;
             }
             //part 4, or startPoint = 3
             exit = false;
@@ -144,7 +138,7 @@ public class ConsoleUI {
                 switch (answer) {
                     case "Y":
                         bookingBegin = LocalDateTime.of(bookingDate, bookingBeginTime);
-                        if (Restaurant.getInstance().bookTable(booking)) {
+                        if (Restaurant.getInstance().tryToBookTable(booking)) {
                             System.out.println(Preferences.bookingConfirmedMsg);
                         }
                         else {
@@ -197,7 +191,7 @@ public class ConsoleUI {
     private void printBookings(){
         System.out.println();
         System.out.println("Bookings for today:");
-        Restaurant.getInstance().getTables().forEach(t -> System.out.println(t.printStatus()));
+        Restaurant.getInstance().getCurrentTableLayout().forEach(t -> System.out.println(t.printStatus()));
         System.out.println();
     }
 }

@@ -23,13 +23,10 @@ public class Booking {
         Booking booking = (Booking) obj;
         if (this == obj)
                 return true;
-        else if (    this.numberOfPeople == booking.getNumberOfPeople() &&
-                this.customer.equals(booking.customer) &&
-                this.bookingBegin.equals(booking.getBookingBegin()) &&
-                this.bookingEnd.equals(booking.getBookingEnd()))
-                    return true;
-
-        else return false;
+        else return this.numberOfPeople == booking.getNumberOfPeople() &&
+                    this.customer.equals(booking.customer) &&
+                    this.bookingBegin.equals(booking.getBookingBegin()) &&
+                    this.bookingEnd.equals(booking.getBookingEnd());
     }
     
     //CONSTRUCTORS
